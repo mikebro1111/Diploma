@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import numpy as np
 import pandas as pd
@@ -10,7 +10,7 @@ from pandas import DataFrame
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score
 
-from fileutils import get_sub_folders
+from Data.datas.fileutils import get_sub_folders
 
 PREDICTORS = ["Close", "Volume", "Open", "High", "Low"]
 
@@ -200,7 +200,7 @@ def main():
 
     predictions["Target"].value_counts() / predictions.shape[0]
 
-    filename = 'data.csv'
+    filename = '../data.csv'
 
     sp500.to_csv(filename, index=False)
 
