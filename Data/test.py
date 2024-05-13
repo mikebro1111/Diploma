@@ -12,7 +12,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-TOKEN = "6806169475:AAF4Coj1v9PoQi7ehQ76EuaEpjlKDjlihnA"
+TOKEN = "" #Token
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
@@ -92,7 +92,7 @@ async def process_callback_button(callback_query: types.CallbackQuery):
 async def main():
     await dp.start_polling(bot)
 
-dataset = pd.read_csv('data/data/data.csv') #шлях до датасету (мав бути в папці з марковіцом, в середовищі цього архіву -> ...data/data/data.cvs)
+dataset = pd.read_csv('data/data/data.csv') # -> ...data/data/data.cvs)
 
 vectorizer = TfidfVectorizer()
 print(dataset.columns)
